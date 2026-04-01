@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- esta línea indica el idioma -->
+<head>
+    <meta charset="UTF-8"> <!-- codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACADEMIA</title>
+    <link rel = "stylesheet" href="css/style.css"> <!--CONECTAR EL HTML CON CSS, carpeta o doc interno-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel = "stylesheet" >
+    <link rel="icon" href="imagens/favicon.png.webp" type="image/png">
+
+</head>
+<body>
+    <header>
+        <h1>DESARROLANDO</h1>
+        <nav> <!-- Links internos -->
+            <a href="#Inicio">Inicio</a>
+            <a href="#Cursos">Cursos</a>
+            <a href="#Contacto">Contacto</a>
+        </nav>
+    </header>
+    <main> <!-- Contenido principal de la pagina -->
+        <h2>"SI LO PUEDES IMAGINAR LO PUEDES PROGRAMAR"</h2>
+        <img src="imagens\imagen1.png" alt="Foto de ejemplo"> <!-- Insercion de imagen local -->
+        <p>Disfruta este contenido exclusivo para ti</p>
+        <a href="https://codingsacademy.com">Mas informacion</a>
+
+        <section>
+            <h2>MODULOS DEL CURSO</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS  y estilos moderno</li>
+                <li>JavaScript</li>
+                <li>React</li>
+            </ul>
+        </section>
+        <section id = "horarios">
+            <h2>HORARIOS </h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Dia</th>
+                        <th>Hora</th>
+                        <th>Modulo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MARTES</td>
+                        <td>7 A 9 PM</td>
+                        <td>HTML</td>
+                    </tr>
+                    <tr>
+                        <td>MIERCOLES</td>
+                        <td>7 A 9 PM</td>
+                        <td>CSS</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <form>
+                <h2>INSCRIBETE</h2>  
+                <label for="nombre">Nombre completo:</label> <!-- Etiqueta de nombre-->
+                <input type="text" id="nombre" placeholder="Escribe tu nombre"> <br> 
+                <label for="email">Correo:</label> <!-- Etiqueta de email-->
+                <input type="email" id="email" placeholder="Escribe el correo"> <br> 
+                <label for="fecha">Fecha de nacimiento:</label> <!-- Etiqueta de fecha de nacimiento-->
+                <input type="date" id="fecha" placeholder="Escribe fecha de nacimiento"> <br> 
+                <label for="modulo">Modulo de su interes:</label>  <!-- Caja de comentario modulo-->
+                <select id="modulo" name="modulo"> <!-- Crea un select-->
+                    <option value ="">Seleccione una opción</option>
+                    <option value ="html">Html</option>
+                    <option value ="css">Css</option>
+                    <option value ="javascript">JavaScript</option>
+                    <option value ="react">React</option>
+                </select>
+
+                <h2>Modalidad preferida</h2>  
+                <input type="radio" id = "virtual" name="modalidad" value = "virtual"> <!-- creo un imput tipo radio para elegir o seleccionar-->
+                <label for ="virtual"> Virtual</label> 
+                <input type="radio" id = "presencial" name="modalidad" value = "presencial"><!-- creo un imput tipo radio para elegir o seleccionar-->
+                <label for ="presencial"> Presencial</label>              
+                <br> 
+                <label for ="mensaje">Ingrese un mensaje:</label> <br>
+                <textarea id = "mensaje"></textarea>
+
+                <br> 
+                
+                <button type="submit">Enviar</button> <!-- Boton de enviar información-->
+            </form>
+        </section>
+        <footer> <p>Elaborado en la clase - Michael Alejandro Carrión</p>
+        </footer>
+    </main>
+    
+</body>
+</html>

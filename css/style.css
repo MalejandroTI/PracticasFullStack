@@ -1,0 +1,154 @@
+/* VARIABLES DE COLOR */
+:root {
+  --fondo: #F4F7F6;
+  --texto: #2D3436;
+  --primario: #0984E3;
+  --secundario: #636E72;
+  --alerta: #D63031;
+  --blanco: #ffffff;
+}
+
+/* RESET BÁSICO */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: var(--fondo);
+  color: var(--texto);
+}
+
+/* HEADER */
+header {
+  background-color: var(--primario);
+  color: var(--blanco);
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: var(--blanco);
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* TITULOS */
+h1, h2 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* CONTENIDO PRINCIPAL */
+main {
+  padding: 20px;
+}
+
+/* IMAGEN */
+img {
+  display: block;
+  margin: 20px auto;
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+/* LINKS */
+a {
+  color: var(--primario);
+  font-weight: 600;
+}
+
+a:hover {
+  color: var(--secundario);
+}
+
+/* SECCIONES */
+section {
+  margin: 20px 0;
+  padding: 20px;
+}
+
+/* LISTAS */
+ul {
+  padding-left: 20px;
+}
+
+/* TABLA */
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  margin: 0 auto;
+}
+
+th {
+  background-color: var(--primario);
+  color: var(--blanco);
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid var(--secundario);
+}
+
+/* FORMULARIO */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: var(--blanco);
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+}
+label {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 3px;
+  border: 1px solid var(--secundario);
+  border-radius: 6px;
+  box-sizing: border-box; /* 🔥 clave */
+}
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* BOTÓN */
+button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: var(--primario);
+  color: var(--blanco);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  align-self: center;
+}
+
+button:hover {
+  background-color: #076bb5;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--texto);
+  color: var(--blanco);
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
