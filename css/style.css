@@ -24,6 +24,7 @@ header {
   text-align: center;
 }
 
+
 nav {
   margin-top: 10px;
 }
@@ -47,17 +48,36 @@ h1, h2 {
 
 /* CONTENIDO PRINCIPAL */
 main {
-  padding: 20px;
+  padding: 50px;
 }
 
 /* IMAGEN */
 img {
   display: block;
   margin: 20px auto;
-  max-width: 300px;
-  border-radius: 10px;
+  max-width: 100%;
 }
 
+.imagenes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.imagenes img {
+  margin: 0;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* sombra suave */
+}
+
+.imagenes img {
+  transition: transform 0.3s ease;
+}
+
+.imagenes img:hover {
+  transform: scale(1.05);
+}
 /* LINKS */
 a {
   color: var(--primario);
