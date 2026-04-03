@@ -62,21 +62,23 @@ img {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap; /*  clave para celular */
 }
 
 .imagenes img {
-  margin: 0;
-  max-width: 400px;
+  width: 100%;        /*  se adapta */
+  max-width: 400px;   /* límite en PC */
+  height: auto;       /*  mantiene proporción */
   border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* sombra suave */
+  margin: 0;
 }
-
+/* ESTAS DOS SECCIONES SON UN EXTRA A LA PRESENTACION DE LAS IMAGENES*/
 .imagenes img {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease;  /* Suavidad al quitar mouse  */
 }
 
-.imagenes img:hover {
-  transform: scale(1.05);
+.imagenes img:hover {       
+  transform: scale(1.05);    /* Amplia imagen al pasar el mouse  por arriba  */
 }
 /* LINKS */
 a {
