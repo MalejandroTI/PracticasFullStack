@@ -1,176 +1,234 @@
-/* VARIABLES DE COLOR */
+/* 1. VARIABLES - Paleta Limpia y Profesional */
 :root {
-  --fondo: #F4F7F6;
-  --texto: #2D3436;
-  --primario: #0984E3;
-  --secundario: #636E72;
-  --alerta: #D63031;
-  --blanco: #ffffff;
+  --fondo: #f8fafc;           /* Gris muy claro para el fondo */
+  --superficie: #ffffff;      /* Blanco para tarjetas y secciones */
+  --primario: #2563eb;        /* Azul marca (se ve en el logo y botones) */
+  --primario-hover: #1d4ed8;  /* Azul más oscuro para interacción */
+  --texto-principal: #1e293b; /* Gris oscuro casi negro para lectura */
+  --texto-secundario: #64748b;/* Gris medio para etiquetas y menús */
+  --borde: #e2e8f0;           /* Gris suave para líneas de división */
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra muy sutil */
+  --radio: 12px;              /* Bordes redondeados consistentes */
 }
 
-/* RESET BÁSICO */
+/* 2. RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Hace que el salto entre secciones sea suave */
+}
+
 body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: var(--fondo);
-  color: var(--texto);
+  color: var(--texto-principal);
+  line-height: 1.6;
 }
 
-/* HEADER */
-header {
-  background-color: var(--primario);
-  color: var(--blanco);
-  padding: 20px;
-  text-align: center;
-}
-
-
-nav {
-  margin-top: 10px;
-}
-
-nav a {
-  color: var(--blanco);
-  text-decoration: none;
-  margin: 0 12px;
-  font-weight: 600;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* TITULOS */
-h1, h2 {
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-/* CONTENIDO PRINCIPAL */
-main {
-  padding: 50px;
-}
-
-/* IMAGEN */
-img {
-  display: block;
-  margin: 20px auto;
-  max-width: 100%;
-}
-
-.imagenes {
+/* 3. HEADER (CENTRALIZADO Y LIMPIO) */
+.sidebar {
+  width: 100%;
+  background: var(--superficie);
+  padding: 0 10%; /* Alineado con el ancho del contenido */
+  height: 80px;   /* Altura fija para control total del centrado */
+  
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap; /*  clave para celular */
+  justify-content: space-between;
+  align-items: center; /* CENTRA VERTICALMENTE TODO EL CONTENIDO */
+  
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--borde);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
 }
 
-.imagenes img {
-  width: 100%;        /*  se adapta */
-  max-width: 400px;   /* límite en PC */
-  height: auto;       /*  mantiene proporción */
-  border-radius: 15px;
-  margin: 0;
-}
-/* ESTAS DOS SECCIONES SON UN EXTRA A LA PRESENTACION DE LAS IMAGENES*/
-.imagenes img {
-  transition: transform 0.3s ease;  /* Suavidad al quitar mouse  */
-}
-
-.imagenes img:hover {       
-  transform: scale(1.05);    /* Amplia imagen al pasar el mouse  por arriba  */
-}
-/* LINKS */
-a {
+.sidebar .logo {
+  font-size: 1.4rem;
+  font-weight: 800;
   color: var(--primario);
-  font-weight: 600;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  line-height: 1; /* Elimina espacio extra arriba/abajo del texto */
 }
 
-a:hover {
-  color: var(--secundario);
+.sidebar nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 
-/* SECCIONES */
-section {
-  margin: 20px 0;
-  padding: 20px;
+.sidebar nav a {
+  color: var(--texto-secundario);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s;
 }
 
-/* LISTAS */
-ul {
-  padding-left: 20px;
+.sidebar nav a:hover {
+  color: var(--primario);
 }
 
-/* TABLA */
-table {
-  width: 80%;
-  border-collapse: collapse;
-  margin-top: 10px;
+/* 4. LAYOUT & CONTENIDO */
+.content {
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* Evita que el header tape los títulos al clickear el menú */
+section {
+  scroll-margin-top: 100px; 
+  margin-bottom: 3rem;
+  padding: 2.5rem;
+  background: var(--superficie);
+  border-radius: var(--radio);
+  border: 1px solid var(--borde);
+  box-shadow: var(--sombra);
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--texto-principal);
+}
+
+/* 5. IMÁGENES (GRID ORDENADO) */
+.imagenes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.imagenes img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover; /* Recorta la imagen para que todas midan lo mismo sin deformarse */
+  border-radius: var(--radio);
+  transition: transform 0.3s ease;
+  border: 1px solid var(--borde);
+}
+
+.imagenes img:hover {
+  transform: translateY(-5px);
+}
+
+/* 6. TABLAS MINIMALISTAS */
+.table-container {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
 th {
-  background-color: var(--primario);
-  color: var(--blanco);
-  padding: 10px;
+  background: #f1f5f9;
+  color: var(--texto-secundario);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  padding: 12px;
+  text-align: left;
 }
 
 td {
-  padding: 10px;
-  border-bottom: 1px solid var(--secundario);
+  padding: 12px;
+  border-bottom: 1px solid var(--borde);
+  font-size: 0.95rem;
 }
 
-/* FORMULARIO */
+/* 7. FORMULARIO COMPACTO (MEJORADO) */
 form {
-  max-width: 500px;
+  max-width: 400px; /* Tamaño reducido para que no se vea gigante */
   margin: 0 auto;
-  padding: 25px;
-  background-color: var(--blanco);
-  border-radius: 12px;
-
-  display: flex;
-  flex-direction: column;
+  padding: 2rem;
+  background: #fafbfc; /* Un tono sutilmente distinto para resaltar */
+  border-radius: var(--radio);
+  border: 1px solid var(--borde);
 }
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
 label {
-  margin-top: 10px;
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
   font-weight: 600;
+  color: var(--texto-secundario);
 }
 
 input, select, textarea {
   width: 100%;
-  padding: 10px;
-  margin-top: 3px;
-  border: 1px solid var(--secundario);
-  border-radius: 6px;
-  box-sizing: border-box; /* 🔥 clave */
-}
-textarea {
-  resize: vertical;
-  min-height: 100px;
+  padding: 0.65rem;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s;
 }
 
-/* BOTÓN */
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primario);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
 button {
-  margin-top: 20px;
-  padding: 12px;
+  width: 100%;
+  padding: 0.8rem;
   background-color: var(--primario);
-  color: var(--blanco);
+  color: white;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
+  font-size: 1rem;
   font-weight: 600;
-  align-self: center;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
 button:hover {
-  background-color: #076bb5;
+  background-color: var(--primario-hover);
 }
 
-/* FOOTER */
+/* 8. FOOTER */
 footer {
-  background-color: var(--texto);
-  color: var(--blanco);
+  padding: 2.5rem;
   text-align: center;
-  padding: 15px;
-  margin-top: 20px;
+  background: var(--superficie);
+  border-top: 1px solid var(--borde);
+  color: var(--texto-secundario);
+  font-size: 0.9rem;
+}
+
+/* 9. RESPONSIVE */
+@media (max-width: 768px) {
+  .sidebar {
+    padding: 0 5%;
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+  
+  .sidebar nav {
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  section {
+    padding: 1.5rem;
+  }
 }
